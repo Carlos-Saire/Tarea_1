@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GenerarBullet : MonoBehaviour
+{
+    [SerializeField] private GameObject Prefab;
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
+        {
+            GameObject go= Instantiate(Prefab, transform.position, transform.rotation);
+            go.GetComponent<bulletControllerr>().Xdirection = 1;
+            print("Dispara");
+        }
+    }
+}
